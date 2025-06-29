@@ -1,0 +1,114 @@
+.profile {
+  display: flex;
+  padding: 34px 0 20px;
+  border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
+}
+
+.profile__pic {
+  margin-right: 20px;
+  border-radius: 10px;
+  height: 190px;
+  width: 190px;
+}
+
+.profile__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__name {
+  margin: 0 0 12px;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 100%;
+  color: #212121;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.profile__decription {
+  margin: 0;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: #212121;
+  opacity: 70%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.profile__edit-button {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  margin-top: auto;
+  width: 106.34px;
+  height: 16px;
+  border: none;
+  opacity: 70%;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 8px;
+  white-space: nowrap;
+  background: transparent;
+}
+
+.profile__post-button {
+  color: #fcf5e5;
+  background-color: #212121;
+  margin-left: auto;
+  height: 52px;
+  width: 157px;
+  margin-top: auto;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.profile__post-icon {
+  padding-right: 8px;
+}
+
+@media screen and (max-width: 640px) {
+  .profile{
+    flex-direction: column;
+    max-width: 288px;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .profile__name{
+    margin: 0 0 6px 0;
+  }
+
+  .profile__pic{
+    height: 80px;
+    width: 80px;
+    margin: 0 0 12px;
+  }
+
+  .profile__post-button{
+    margin: 0;
+    width: 288px;
+  }
+
+  .profile__edit-button{
+    margin-top: 32px;
+    margin-bottom: 20px;
+  }
+
+  .profile__container{
+    align-items: center;
+  }
+}
