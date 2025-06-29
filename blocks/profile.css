@@ -29,6 +29,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
+  width: 100%;
 }
 
 .profile__decription {
@@ -45,6 +46,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
+  width: 100%;
 }
 
 .profile__edit-button {
@@ -80,7 +82,7 @@
 }
 
 @media screen and (max-width: 640px) {
-  .profile{
+  .profile {
     flex-direction: column;
     max-width: 288px;
     align-items: center;
@@ -88,27 +90,27 @@
     padding: 20px 0;
   }
 
-  .profile__name{
+  .profile__name {
     margin: 0 0 6px 0;
   }
 
-  .profile__pic{
+  .profile__pic {
     height: 80px;
     width: 80px;
     margin: 0 0 12px;
   }
 
-  .profile__post-button{
+  .profile__post-button {
     margin: 0;
     width: 288px;
   }
 
-  .profile__edit-button{
+  .profile__edit-button {
     margin-top: 32px;
     margin-bottom: 20px;
   }
 
-  .profile__container{
+  .profile__container {
     align-items: center;
   }
 }

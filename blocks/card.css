@@ -32,21 +32,22 @@
 }
 
 @media screen and (max-width: 640px) {
-.card{
-  max-width: 288px;
-}
+  .card {
+    max-width: 288px;
+  }
 
-  .card__image{
-height: 288px;
-width: 288px;
-margin-bottom: 12px;
-}
+  .card__image {
+    height: 288px;
+    width: 288px;
+    margin-bottom: 12px;
+  }
 
-.card__title{
-  margin: 0;
+  .card__title {
+    margin: 0;
     font-size: 16px;
-  line-height: 100%;
-
-}
-
+    line-height: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
