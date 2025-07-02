@@ -55,7 +55,6 @@
   font-size: 16px;
   line-height: 100%;
   margin-top: auto;
-  width: 106.34px;
   height: 16px;
   border: none;
   opacity: 70%;
@@ -75,6 +74,13 @@
   margin-top: auto;
   cursor: pointer;
   border-radius: 8px;
+}
+
+.profile__edit-button:hover,
+.profile__post-button:hover {
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
 }
 
 .profile__post-icon {

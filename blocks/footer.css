@@ -7,6 +7,7 @@
   color: #212121;
   opacity: 70%;
   padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 @media screen and (max-width: 640px) {
