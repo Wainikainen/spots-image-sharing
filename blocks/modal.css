@@ -13,7 +13,7 @@
 }
 
 .modal_is-opened {
-  visibility: hidden;
+  visibility: visible;
 }
 
 .modal__container {
@@ -76,3 +76,8 @@
     top: 12px;
   }
 }
+
+.modal--hidden {
+  visibility: hidden;
+}
+
