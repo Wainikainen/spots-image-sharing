@@ -1,7 +1,7 @@
 .modal {
   position: fixed;
   height: 100vh;
-  width: 100vw;
+  width:100%;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.4);
@@ -23,7 +23,6 @@
   width: 730px;
   height: 408px;
   border-radius: 8px;
-  margin: 207px 355px;
 }
 
 .modal__exit {
@@ -33,24 +32,17 @@
   cursor: pointer;
   width: 40px;
   height: 40px;
-  margin: 32px 50px 336px 640px;
-}
-
-.modal__exit img {
-  color: #212121;
+  top: 32px;
+  right: 50px;
   opacity: 40%;
 }
 
-.modal__exit img:hover {
+.modal__exit:hover{
   color: #212121;
-}
-@media screen and (max-width: 1440px) {
-  .modal__container {
-    max-width: 730px;
-  }
+  opacity: 100%;
 }
 
-@media screen and (max-width: 739px) {
+@media screen and (max-width: 850px) {
   .modal__container {
     margin: 0 10px;
     width: 80%;
@@ -63,6 +55,7 @@
     margin: 0;
   }
 }
+
 
 @media screen and (max-width: 330px) {
   .modal__container {
