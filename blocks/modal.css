@@ -25,6 +25,78 @@
   border-radius: 8px;
 }
 
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 50px;
+}
+
+.modal__form-title {
+  margin: 0;
+  padding-bottom: 32px;
+  width: 630px;
+  height: 40px;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  line-height: 100%;
+  font-weight: 500;
+  color: #212121;
+}
+
+.modal__form-input {
+  box-sizing: border-box;
+  margin-bottom: 32px;
+  padding: 16px 12px;
+  width: 630px;
+  height: 52px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 100%;
+  color: #212121;
+  width: 100%;
+}
+
+.modal__form-input::placeholder {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 100%;
+  color: #212121;
+  opacity: 30%;
+}
+
+.modal__form-input:hover {
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.modal__form-label {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 110%;
+  padding-bottom: 8px;
+  opacity: 70%;
+  color: #212121;
+}
+
+.modal__form-save {
+  cursor: pointer;
+  width: 156px;
+  height: 52px;
+  border-radius: 8px;
+  padding: 18px 32px;
+  background-color: #212121;
+  color: #fcf5e5;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+}
+
 .modal__exit {
   background-color: #ffffff;
   border: none;
@@ -56,6 +128,17 @@
   }
 }
 
+@media screen and (max-width: 395px) {
+  .modal__form-save {
+    width: 100%;
+  }
+
+  .modal__form-title {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
 
 @media screen and (max-width: 330px) {
   .modal__container {
@@ -68,4 +151,42 @@
     right: 12px;
     top: 12px;
   }
+   .modal__form-title {
+    width: 276px;
+    height: 40px;
+    font-size: 20px;
+    padding: 10px 0;
+    box-sizing: border-box;
+    margin-bottom: 24px;
+  }
+
+  .modal__form {
+    padding: 12px;
+  }
+
+  .modal__form-input {
+    box-sizing: border-box;
+    padding: 16px;
+    font-size: 16px;
+    width: 276px;
+    height: 48px;
+    margin: 0 0 24px;
+  }
+
+  .modal__form-input::placeholder {
+    font-size: 16px;
+  }
+
+  .modal__form-save {
+    width: 276px;
+    height: 52px;
+    padding: 18px 32px;
+  }
+
+   .modal__form-label {
+    margin-bottom: 8px;
+    padding: 0px;
+  }
+
+
 }
