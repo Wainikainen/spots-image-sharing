@@ -37,8 +37,6 @@ const profileExitButton = editProfileModal.querySelector(".modal__exit");
 
 const postExitButton = newPostModal.querySelector(".modal__exit");
 
-
-
 const editProfileFormEl = editProfileModal.querySelector(".modal__form");
 
 const editProfileNameInput = editProfileModal.querySelector("#profile-name-input");
@@ -54,8 +52,6 @@ const newPostFormEl = newPostModal.querySelector(".modal__form");
 const addLinkInput = newPostModal.querySelector("#image-link-input");
 
 const addCaptionInput = newPostModal.querySelector("#caption-link-input");
-
-
 
 profileEditButton.addEventListener("click",function(){
   editProfileModal.classList.add("modal_is-opened");
@@ -92,11 +88,6 @@ function handleNewPostFormSubmit(evt) {
 }
 
 newPostFormEl.addEventListener('submit', handleNewPostFormSubmit);
-
-
-
-
-
 
 initialCards.forEach((card) => {
   console.log(card.name);
