@@ -53,6 +53,12 @@ const addLinkInput = newPostModal.querySelector("#image-link-input");
 
 const addCaptionInput = newPostModal.querySelector("#caption-link-input");
 
+
+
+const openModal = modal => classList.add("modal_is_opened");
+const closeModal = modal => classList.remove("modal_is-closed");
+
+
 profileEditButton.addEventListener("click",function(){
   editProfileModal.classList.add("modal_is-opened");
   editProfileNameInput.value = profileNameEl.textContent;
