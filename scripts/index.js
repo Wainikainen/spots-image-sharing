@@ -53,45 +53,36 @@ const addLinkInput = newPostModal.querySelector("#image-link-input");
 
 const addCaptionInput = newPostModal.querySelector("#caption-link-input");
 
+const openModal = modal => modal.classList.add("modal_is-opened");
+const closeModal = modal => modal.classList.remove("modal_is-opened");
 
-
-const openModal = modal => classList.add("modal_is_opened");
-const closeModal = modal => classList.remove("modal_is-closed");
-
-
-profileEditButton.addEventListener("click",function(){
-  editProfileModal.classList.add("modal_is-opened");
+profileEditButton.addEventListener("click",() => {
+  openModal(editProfileModal);
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
 });
 
-profilePostButton.addEventListener("click", function(){
-newPostModal.classList.add("modal_is-opened");
-});
+profilePostButton.addEventListener("click",() => openModal(newPostModal));
 
-profileExitButton.addEventListener("click", function(){
-  editProfileModal.classList.remove("modal_is-opened");
-});
+profileExitButton.addEventListener("click",() => closeModal(editProfileModal));
 
-postExitButton.addEventListener("click", function(){
-newPostModal.classList.remove("modal_is-opened");
-});
+postExitButton.addEventListener("click",() => closeModal(newPostModal));
 
-function handleProfileFormSubmit(evt) {
+const handleProfileFormSubmit = evt => {
   evt.preventDefault();
  profileNameEl.textContent = editProfileNameInput.value;
  profileDescriptionEl.textContent = editProfileDescriptionInput.value;
- editProfileModal.classList.remove("modal_is-opened");
-}
+ closeModal(editProfileModal);
+};
 
 editProfileFormEl.addEventListener('submit', handleProfileFormSubmit);
 
-function handleNewPostFormSubmit(evt) {
+const handleNewPostFormSubmit = evt => {
   evt.preventDefault();
   console.log(addLinkInput.value);
   console.log(addCaptionInput.value);
-  newPostModal.classList.remove("modal_is-opened");
-}
+  closeModal(newPostModal);
+};
 
 newPostFormEl.addEventListener('submit', handleNewPostFormSubmit);
 
