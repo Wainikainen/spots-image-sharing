@@ -53,6 +53,7 @@ const addLinkInput = newPostModal.querySelector("#image-link-input");
 
 const addCaptionInput = newPostModal.querySelector("#caption-link-input");
 
+
 const openModal = modal => modal.classList.add("modal_is-opened");
 const closeModal = modal => modal.classList.remove("modal_is-opened");
 
