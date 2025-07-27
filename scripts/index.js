@@ -39,13 +39,9 @@ const postExitButton = newPostModal.querySelector(".modal__exit");
 
 const editProfileFormEl = editProfileModal.querySelector(".modal__form");
 
-const editProfileNameInput = editProfileModal.querySelector(
-  "#profile-name-input"
-);
+const editProfileNameInput = editProfileModal.querySelector("#profile-name-input");
 
-const editProfileDescriptionInput = editProfileModal.querySelector(
-  "#profile-description-input"
-);
+const editProfileDescriptionInput = editProfileModal.querySelector("#profile-description-input");
 
 const profileNameEl = document.querySelector(".profile__name");
 
@@ -66,15 +62,18 @@ const closeModal = (modal) => modal.classList.remove("modal_is-opened");
 
 const getCardElement = (data) => {
   const cardElement = cardTemplateEl.content.cloneNode(true);
+  const cardPostEL = cardElement.querySelector(".card");
   const cardTitleEl = cardElement.querySelector(".card__title");
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardLikeButton = cardElement.querySelector(".card__like-button");
+  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
   cardTitleEl.textContent = data.name;
   cardLikeButton.addEventListener("click", () => {
     cardLikeButton.classList.toggle("card__like-button_is-active");
   });
+  cardDeleteButton.addEventListener("click", () => cardPostEL.remove());
   return cardElement;
 };
 

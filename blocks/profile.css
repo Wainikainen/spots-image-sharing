@@ -63,6 +63,7 @@
   gap: 8px;
   white-space: nowrap;
   background: transparent;
+  transition: opacity 0.3s ease;
 }
 
 .profile__post-button {
@@ -74,12 +75,12 @@
   margin-top: auto;
   cursor: pointer;
   border-radius: 8px;
+  transition: opacity 0.3s ease;
 }
 
 .profile__edit-button:hover,
 .profile__post-button:hover {
   opacity: 0.9;
-  transition: opacity 0.3s ease;
   cursor: pointer;
 }
 
