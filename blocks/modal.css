@@ -70,7 +70,7 @@
   font-weight: 500;
   line-height: 100%;
   color: #212121;
-  opacity: 30%;
+  opacity: 0.3;
 }
 
 .modal__form-input:hover {
@@ -83,7 +83,7 @@
   font-size: 16px;
   line-height: 110%;
   padding-bottom: 8px;
-  opacity: 70%;
+  opacity: 0.7;
   color: #212121;
 }
 
@@ -110,12 +110,12 @@
   height: 40px;
   top: 32px;
   right: 50px;
-  opacity: 40%;
+  opacity: 0.4;
 }
 
 .modal__exit:hover {
   color: #212121;
-  opacity: 100%;
+  opacity: 1;
 }
 
 @media screen and (max-width: 850px) {

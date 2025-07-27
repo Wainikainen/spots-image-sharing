@@ -21,20 +21,39 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 120%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card__like-button {
   background-image: url(../images/likeicon.svg);
-  width: 23px;
-  height: 20px;
+  width: 23px !important;
+  height: 20px !important;
   border: none;
-  opacity: 40%;
+  opacity: 0.4;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  flex-shrink: 0;
 }
 
 .card__like-button:hover {
   opacity: 0.9;
   transition: opacity 0.3s ease;
   cursor: pointer;
+}
+
+.card__like-button_is-active {
+  background-image: url(../images/like.svg);
+  opacity: 1;
+  background-color: transparent;
+  background-repeat: no-repeat;
+}
+
+.card__like-button_is-active:hover {
+  opacity: 0.5;
 }
 
 @media screen and (max-width: 640px) {
