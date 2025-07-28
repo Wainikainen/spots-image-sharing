@@ -23,6 +23,10 @@ const initialCards = [
     name: "Mountain house",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
+  {
+    name: "Golden Gate Bridge",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+  },
 ];
 
 const profileEditButton = document.querySelector(".profile__edit-button");
@@ -57,9 +61,17 @@ const cardTemplateEl = document.querySelector("#card-template");
 
 const cardContainer = document.querySelector(".cards__list");
 
+const modalImage = document.querySelector("#modal-image");
+
+const modalImageEl = modalImage.querySelector(".modal__image");
+
+const imageCaption = modalImage.querySelector(".modal__image-title");
+
+const closeModalImage = modalImage.querySelector(".modal__image-close");
+
 const openModal = (modal) => modal.classList.add("modal_is-opened");
 const closeModal = (modal) => modal.classList.remove("modal_is-opened");
-
+closeModalImage.addEventListener("click", () => closeModal(modalImage));
 const getCardElement = (data) => {
   const cardElement = cardTemplateEl.content.cloneNode(true);
   const cardPostEL = cardElement.querySelector(".card");
@@ -74,6 +86,13 @@ const getCardElement = (data) => {
     cardLikeButton.classList.toggle("card__like-button_is-active");
   });
   cardDeleteButton.addEventListener("click", () => cardPostEL.remove());
+  cardImageEl.addEventListener("click", () => {
+    modalImageEl.src = data.link;
+    modalImageEl.alt = data.name;
+    imageCaption.textContent = data.name;
+    openModal(modalImage);
+  });
+
   return cardElement;
 };
 
