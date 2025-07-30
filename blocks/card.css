@@ -58,7 +58,7 @@
 }
 
 .card__delete-button {
-  background-image: url(../images/trash.svg);
+  background-image: url(../images/delete.svg);
   width: 32px !important;
   height: 32px !important;
   border: none;
@@ -67,9 +67,31 @@
   left: 371px;
   background-color: transparent;
   cursor: pointer;
+  background-color: #000000;
+  opacity: 0.3;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .card__delete-button:hover {
   background-color: #ff6565;
   border-radius: 50%;
+}
+
+@media screen and (max-width:450px ) {
+.card{
+width: 100%;
+}
+
+.card__image{
+width: 288px;
+height: 288px;
+justify-self: center;
+}
+
+.card__delete-button{
+  left: 245px;
+}
+
 }
