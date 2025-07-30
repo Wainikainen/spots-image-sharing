@@ -43,9 +43,13 @@ const postExitButton = newPostModal.querySelector(".modal__exit");
 
 const editProfileFormEl = editProfileModal.querySelector(".modal__form");
 
-const editProfileNameInput = editProfileModal.querySelector("#profile-name-input");
+const editProfileNameInput = editProfileModal.querySelector(
+  "#profile-name-input"
+);
 
-const editProfileDescriptionInput = editProfileModal.querySelector("#profile-description-input");
+const editProfileDescriptionInput = editProfileModal.querySelector(
+  "#profile-description-input"
+);
 
 const profileNameEl = document.querySelector(".profile__name");
 
