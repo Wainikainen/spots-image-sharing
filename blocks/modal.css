@@ -64,7 +64,7 @@
 }
 
 .modal__image-title {
-  width: 214px;
+  width: fit-content;
   height: 32px;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 500;
@@ -78,6 +78,9 @@
   background-color: #212121;
   border-radius: 8px;
   align-content: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: none;
 }
 
 .modal__form {

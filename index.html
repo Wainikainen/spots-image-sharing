@@ -81,16 +81,27 @@
             placeholder="Type your name"
             class="modal__form-input"
             id="profile-name-input"
+            minlength="2"
+            maxlength="40"
+            name="name"
             required
           />
+          <span class="modal__form-error" id="profile-name-input-error"></span>
           <label class="modal__form-label">Description</label>
           <input
             type="text"
             placeholder="Describe yourself"
             class="modal__form-input"
             id="profile-description-input"
+            minlength="2"
+            maxlength="200"
+            name="description"
             required
           />
+          <span
+            class="modal__form-error"
+            id="profile-description-input-error"
+          ></span>
           <button type="submit" class="modal__form-save">Save</button>
         </form>
       </div>
@@ -108,20 +119,26 @@
           <h2 class="modal__form-title">New Post</h2>
           <label class="modal__form-label">Image link</label>
           <input
-            type="text"
             placeholder="Paste a link to the picture"
             class="modal__form-input"
             id="image-link-input"
+            type="url"
+            name="link"
             required
           />
+          <span class="modal__form-error" id="image-link-input-error"></span>
           <label class="modal__form-label">Caption</label>
           <input
             type="text"
             placeholder="Type your caption"
             class="modal__form-input"
             id="caption-link-input"
+            minlength="2"
+            maxlength="30"
+            name="caption"
             required
           />
+          <span class="modal__form-error" id="caption-link-input-error"></span>
           <button type="submit" class="modal__form-save">Save</button>
         </form>
       </div>
