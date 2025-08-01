@@ -91,11 +91,11 @@
   border-radius: 8px;
 }
 
-.modal__form-error{
+.modal__form-error {
   display: block;
-  color: #FF0000;
-  opacity: .7;
-  font-family: "poppins",Arial, Helvetica, sans-serif;
+  color: #ff0000;
+  opacity: 0.7;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 16px;
   padding-bottom: 32px;
@@ -103,7 +103,7 @@
 }
 
 .modal__form-error_visible {
-visibility: visible;
+  visibility: visible;
 }
 
 .modal__form-title {
@@ -171,11 +171,10 @@ visibility: visible;
   line-height: 100%;
 }
 
-.modal__form-save_disabled{
-  opacity: .5;
+.modal__form-save_disabled {
+  opacity: 0.5;
   pointer-events: none;
 }
-
 
 .modal__exit {
   background-color: #ffffff;

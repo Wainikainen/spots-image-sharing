@@ -75,8 +75,35 @@ const closeModalImage = modalImage.querySelector(".modal__image-close");
 
 const modalSaveButton = newPostFormEl.querySelector(".modal__form-save");
 
-const openModal = (modal) => modal.classList.add("modal_is-opened");
-const closeModal = (modal) => modal.classList.remove("modal_is-opened");
+const allModals = document.querySelectorAll(".modal");
+
+const openModal = (modal) => {
+  modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", closeModalEsc);
+};
+
+const closeModal = (modal) => {
+  modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keydown", closeModalEsc);
+};
+
+const closeModalEsc = (event) => {
+  if (event.key === "Escape") {
+    const openModalEl = document.querySelector(".modal_is-opened");
+    if (openModalEl) closeModal(openModalEl);
+  }
+};
+
+allModals.forEach((modal) => {
+  modal.addEventListener("mousedown", (event) => {
+    if (event.target === modal) {
+      closeModal(modal);
+      const form = modal.querySelector("form");
+      if (form) form.reset();
+    }
+  });
+});
+
 closeModalImage.addEventListener("click", () => closeModal(modalImage));
 const getCardElement = (data) => {
   const cardElement = cardTemplateEl.content.cloneNode(true);
@@ -108,13 +135,20 @@ initialCards.forEach((card) => {
 });
 
 profileEditButton.addEventListener("click", () => {
-  resetValidation(editProfileFormEl,[editProfileNameInput,editProfileDescriptionInput]);
+  resetValidation(
+    editProfileFormEl,
+    [editProfileNameInput, editProfileDescriptionInput],
+    settings
+  );
   openModal(editProfileModal);
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
 });
 
-profilePostButton.addEventListener("click", () => openModal(newPostModal));
+profilePostButton.addEventListener("click", () => {
+  openModal(newPostModal);
+  resetValidation(newPostFormEl, [addCaptionInput, addLinkInput], settings);
+});
 
 profileExitButton.addEventListener("click", () => {
   closeModal(editProfileModal);
@@ -144,7 +178,7 @@ const handleNewPostFormSubmit = (evt) => {
   };
   const newCardEl = getCardElement(newPost);
   cardContainer.prepend(newCardEl);
-  disableButton(modalSaveButton);
+  disableButton(modalSaveButton, settings);
   closeModal(newPostModal);
   newPostFormEl.reset();
 };
