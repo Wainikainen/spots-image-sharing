@@ -87,6 +87,23 @@
   display: flex;
   flex-direction: column;
   padding: 32px 50px;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.modal__form-error{
+  display: block;
+  color: #FF0000;
+  opacity: .7;
+  font-family: "poppins",Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  padding-bottom: 32px;
+  padding-top: 8px;
+}
+
+.modal__form-error_visible {
+visibility: visible;
 }
 
 .modal__form-title {
@@ -103,7 +120,6 @@
 
 .modal__form-input {
   box-sizing: border-box;
-  margin-bottom: 32px;
   padding: 16px 12px;
   width: 630px;
   height: 52px;
