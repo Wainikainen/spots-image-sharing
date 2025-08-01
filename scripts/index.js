@@ -73,6 +73,8 @@ const imageCaption = modalImage.querySelector(".modal__image-title");
 
 const closeModalImage = modalImage.querySelector(".modal__image-close");
 
+const modalSaveButton = newPostFormEl.querySelector(".modal__form-save");
+
 const openModal = (modal) => modal.classList.add("modal_is-opened");
 const closeModal = (modal) => modal.classList.remove("modal_is-opened");
 closeModalImage.addEventListener("click", () => closeModal(modalImage));
@@ -106,6 +108,7 @@ initialCards.forEach((card) => {
 });
 
 profileEditButton.addEventListener("click", () => {
+  resetValidation(editProfileFormEl,[editProfileNameInput,editProfileDescriptionInput]);
   openModal(editProfileModal);
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
@@ -141,6 +144,7 @@ const handleNewPostFormSubmit = (evt) => {
   };
   const newCardEl = getCardElement(newPost);
   cardContainer.prepend(newCardEl);
+  disableButton(modalSaveButton);
   closeModal(newPostModal);
   newPostFormEl.reset();
 };

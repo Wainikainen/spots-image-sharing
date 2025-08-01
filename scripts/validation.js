@@ -18,9 +18,36 @@ const checkInputValidity = (formEl,inputEl) => {
   }
 };
 
+const hasInvalidInput = (inputList) => {
+return inputList.some((inputEl) => {
+  return !inputEl.validity.valid;
+});
+};
+
+const toggleButtonState = (inputList, buttonEl) => {
+if (hasInvalidInput(inputList)) {
+  disableButton(buttonEl);
+}else {
+ buttonEl.disabled = false;
+ buttonEl.classList.remove(".modal__form-save_disabled");
+};
+};
+
+const disableButton = (buttonEl) => {
+buttonEl.disabled = true;
+buttonEl.classList.add(".modal__form-save_disabled");
+};
+
+const resetValidation = (formEl,inputList) => {
+inputList.forEach((input) => {
+hideInputError(formEl,input);
+})
+};
+
 const setEventListeners = (formEl) => {
 const inputList = Array.from(formEl.querySelectorAll(".modal__form-input"));
 const buttonEl = formEl.querySelector(".modal__form-save");
+toggleButtonState (inputList, buttonEl);
 inputList.forEach((inputEl) => {
 inputEl.addEventListener("input", function () {
   checkInputValidity(formEl,inputEl);
@@ -30,7 +57,7 @@ inputEl.addEventListener("input", function () {
 }
 
 const enableValidation = () => {
-const FormList= Array.from(document.querySelectorAll(".modal__form"));
+const FormList= document.querySelectorAll(".modal__form");
 FormList.forEach((formEl) => {
   setEventListeners(formEl);
 });

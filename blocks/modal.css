@@ -171,6 +171,12 @@ visibility: visible;
   line-height: 100%;
 }
 
+.modal__form-save_disabled{
+  opacity: .5;
+  pointer-events: none;
+}
+
+
 .modal__exit {
   background-color: #ffffff;
   border: none;
