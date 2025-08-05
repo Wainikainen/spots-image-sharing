@@ -1,0 +1,19 @@
+{
+  "name": "spots_project4",
+  "version": "0.1.0",
+  "description": "simple website called spots to post images w/ captions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wainikainen/se_project_spots.git"
+  },
+  "author": "Adam Wainikainen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wainikainen/se_project_spots/issues"
+  },
+  "homepage": "https://github.com/Wainikainen/se_project_spots#readme"
+}
