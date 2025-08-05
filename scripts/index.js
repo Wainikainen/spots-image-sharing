@@ -1,3 +1,5 @@
+import { enableValidation, settings, resetValidation} from "./validation.js";
+
 const initialCards = [
   {
     name: "Val Thorens",
@@ -184,3 +186,5 @@ const handleNewPostFormSubmit = (evt) => {
 };
 
 newPostFormEl.addEventListener("submit", handleNewPostFormSubmit);
+
+enableValidation(settings);
