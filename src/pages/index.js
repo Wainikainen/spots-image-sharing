@@ -1,7 +1,8 @@
 import "./index.css";
 import { enableValidation, settings, resetValidation} from "../scripts/validation";
+import Api from "../scripts/api";
 
-const initialCards = [
+/*const initialCards = [
   {
     name: "Val Thorens",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
@@ -30,7 +31,24 @@ const initialCards = [
     name: "Golden Gate Bridge",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
   },
-];
+];*/
+
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "15a752fc-ac26-49e2-9167-8e47fc62f4ff",
+    "Content-Type": "application/json"
+  }
+});
+
+api.getSiteInfo()
+.then(({userInfo, cards}) => {
+cards.forEach((card) => {
+  const newCardEl = getCardElement(card);
+  cardContainer.prepend(newCardEl);
+});
+})
+.catch(console.error);
 
 const profileEditButton = document.querySelector(".profile__edit-button");
 
@@ -131,11 +149,6 @@ const getCardElement = (data) => {
 
   return cardElement;
 };
-
-initialCards.forEach((card) => {
-  const newCardEl = getCardElement(card);
-  cardContainer.prepend(newCardEl);
-});
 
 profileEditButton.addEventListener("click", () => {
   resetValidation(
