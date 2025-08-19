@@ -30,6 +30,67 @@
   border-radius: 8px;
 }
 
+.modal__container-avatar {
+  width: 730px;
+  height: 298px;
+}
+
+.modal__container-delete {
+  height: 172px;
+  width: 630px;
+  justify-items: center;
+}
+
+.modal__delete-title {
+  width: 590px;
+  height: 32px;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  margin: 32px 0px;
+}
+
+.modal__delete-save {
+  cursor: pointer;
+  width: 156px;
+  height: 52px;
+  border-radius: 8px;
+  padding: 18px 32px;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #212121;
+  border: none;
+  background-color: #ff6565;
+}
+
+.modal__delete-save:hover {
+  background-color: #ff3333;
+}
+
+.modal__delete-cancel {
+  cursor: pointer;
+  width: 156px;
+  height: 52px;
+  border-radius: 8px;
+  padding: 18px 32px;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #212121;
+  border: 1px solid black;
+}
+
+.modal__delete-cancel {
+  background-color: #212121;
+}
+
+.modal__form-delete {
+  gap: 20px;
+  display: flex;
+}
+
 .modal--image .modal__container {
   position: relative;
   box-sizing: border-box;
@@ -118,6 +179,19 @@
   color: #212121;
 }
 
+.modal__form-avatar {
+  width: 630px;
+  height: 40px;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  line-height: 100%;
+  font-weight: 500;
+  color: #212121;
+  margin: 32px 50px 0;
+  display: flex;
+  align-items: center;
+}
+
 .modal__form-input {
   box-sizing: border-box;
   padding: 16px 12px;
@@ -148,6 +222,16 @@
 }
 
 .modal__form-label {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 110%;
+  padding-bottom: 8px;
+  opacity: 0.7;
+  color: #212121;
+}
+
+.modal__label-avatar {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -191,6 +275,28 @@
 .modal__exit:hover {
   color: #212121;
   opacity: 1;
+}
+
+.modal__file-button {
+  display: flex;
+  border: none;
+  background: transparent;
+}
+
+.modal__file-icon {
+  height: 20px;
+  width: 20px;
+  position: relative;
+  left: 120px;
+  bottom: 28px;
+}
+
+.modal__file-input {
+  display: none;
+}
+
+.modal__file-upload {
+  height: 5px;
 }
 
 @media screen and (max-width: 850px) {
