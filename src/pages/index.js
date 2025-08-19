@@ -36,19 +36,24 @@ import Api from "../scripts/api";
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
-    authorization: "15a752fc-ac26-49e2-9167-8e47fc62f4ff",
+    authorization: "75e9bfca-7947-47ee-85a7-3709ecf46b79",
     "Content-Type": "application/json"
   }
 });
 
 api.getSiteInfo()
-.then(({userInfo, cards}) => {
+.then(({ userInfo, cards }) => {
+  profileNameEl.textContent = userInfo.name;
+  profileDescriptionEl.textContent = userInfo.about;
+  profilePicEl.src = userInfo.avatar;
 cards.forEach((card) => {
   const newCardEl = getCardElement(card);
   cardContainer.prepend(newCardEl);
 });
 })
 .catch(console.error);
+
+const profilePicEl = document.querySelector(".profile__pic");
 
 const profileEditButton = document.querySelector(".profile__edit-button");
 
@@ -178,26 +183,35 @@ postExitButton.addEventListener("click", () => {
 
 const handleProfileFormSubmit = (evt) => {
   evt.preventDefault();
-  profileNameEl.textContent = editProfileNameInput.value;
-  profileDescriptionEl.textContent = editProfileDescriptionInput.value;
+  const name = editProfileNameInput.value;
+  const about = editProfileDescriptionInput.value;
+  
+  api.editUserInfo({name, about})
+  .then((data) => {
+  profileNameEl.textContent = data.name
+  profileDescriptionEl.textContent = data.about;
   closeModal(editProfileModal);
   editProfileFormEl.reset();
+  })
+  .catch(console.error);
 };
 
 editProfileFormEl.addEventListener("submit", handleProfileFormSubmit);
 
 const handleNewPostFormSubmit = (evt) => {
   evt.preventDefault();
-  const newPost = {
-    name: addCaptionInput.value,
-    link: addLinkInput.value,
-  };
-  const newCardEl = getCardElement(newPost);
+  const name = addCaptionInput.value;
+  const link = addLinkInput.value;
+api.createCard({name, link})
+.then((newCard) => {
+const newCardEl = getCardElement(newCard);
   cardContainer.prepend(newCardEl);
+ newPostFormEl.reset();
   disableButton(modalSaveButton, settings);
   closeModal(newPostModal);
-  newPostFormEl.reset();
-};
+})
+.catch(console.error);
+  };
 
 newPostFormEl.addEventListener("submit", handleNewPostFormSubmit);
 
