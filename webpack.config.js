@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { watchFile } = require("fs");
 
 module.exports = {
   entry: {
@@ -22,7 +23,7 @@ module.exports = {
     port: 8080,
     open: true,
     liveReload: true,
-    hot: false,
+    hot: true,
   },
   target: ["web", "es5"],
   module: {
