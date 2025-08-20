@@ -186,7 +186,7 @@
 
     <div class="modal" id="avatar-modal">
       <div class="modal__container modal__container-avatar">
-        <button type="button" class="modal__exit" aria-label="Exit Modal">
+        <button type="button" class="modal__exit modal__exit-avatar" aria-label="Exit Modal">
           <img
             class="modal__exit-icon"
             src="<%=require('./images/Group27.svg')%>"
@@ -214,7 +214,6 @@
                 class="modal__file-icon"
               />
             </button>
-            <!--<span class="modal__form-error" id="avatar-file-error"></span>-->
           </div>
 
           <input
@@ -226,7 +225,7 @@
           />
 
           <span class="modal__form-error" id="avatar-link-error"></span>
-          <button class="modal__form-save" type="submit" id="submit-avatar-btn">
+          <button class="modal__form-save-disabled modal__form-save" disabled type="submit" id="submit-avatar-btn">
             Save
           </button>
         </form>

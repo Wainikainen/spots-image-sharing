@@ -172,6 +172,12 @@ const getCardElement = (data) => {
   cardImageEl.alt = data.name;
   cardTitleEl.textContent = data.name;
 
+  if (data.isLiked) {
+    cardLikeButton.classList.add("card__like-button_is-active");
+  } else {
+    cardLikeButton.classList.remove("card__like-button_is-active");
+  }
+
   cardLikeButton.addEventListener("click", () => {
     if (cardLikeButton.classList.contains("card__like-button_is-active")) {
       api
@@ -248,7 +254,7 @@ postExitButton.addEventListener("click", () => {
 
 profilePicBtn.addEventListener("click", () => {
   openModal(avatarModal);
-  avatarSaveBtn.disabled = true;
+  disableButton(avatarModal);
   resetValidation(avatarFormEl, [avatarLinkInput], settings);
 });
 
