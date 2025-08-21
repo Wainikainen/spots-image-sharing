@@ -2,7 +2,7 @@ import "./index.css";
 import {
   enableValidation,
   settings,
-  resetValidation,
+  resetValidation, disableButton
 } from "../scripts/validation";
 import Api from "../scripts/api";
 
@@ -254,7 +254,6 @@ postExitButton.addEventListener("click", () => {
 
 profilePicBtn.addEventListener("click", () => {
   openModal(avatarModal);
-  disableButton(avatarModal);
   resetValidation(avatarFormEl, [avatarLinkInput], settings);
 });
 
