@@ -9,5 +9,3 @@ Spots is an interactive image-sharing application where users can add and remove
 - JavaScript to handle interactivity such as adding/removing photos and liking features  
 - Figma used for UI/UX design guidance  
 
-## Live Demo  
-Try out the live project here: [Spots on GitHub Pages](https://wainikainen.github.io/se_project_spots/)
