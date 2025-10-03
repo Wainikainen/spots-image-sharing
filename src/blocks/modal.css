@@ -84,6 +84,7 @@
 
 .modal__delete-cancel:hover {
   background-color: #212121;
+  color: white;
 }
 
 .modal__form-delete {
